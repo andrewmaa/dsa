@@ -7,11 +7,9 @@ This program can be compiled by executing the command:
 javac FibonacciTester.java
 
 This program can be run by executing the command:
-java Fibonacci Tester maxInput maxTime
-, where:
+java Fibonacci Tester maxInput maxTime, where:
 - maxInput is the maximum input, the larget Fibonacci value to test
-- maxTime is the maximum time, the largest amount of time (in milliseconds)
-that the program is willing to wait for an algorithm to finish before canceling a higher input.
+- maxTime is the maximum time, the largest amount of time (in milliseconds) that the program is willing to wait for an algorithm to finish before canceling a higher input.
 
 TIME SPENT: 
 This project took around 2 hours to complete.
