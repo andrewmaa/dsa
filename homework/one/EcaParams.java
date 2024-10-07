@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 
 public class EcaParams {
+
+    // creating private variables for each parameter
     private int rule;
     private double[] probabilities;
     private AnsiColor offColor = new AnsiColor("black");
@@ -13,22 +15,33 @@ public class EcaParams {
     private double init = 0.0;
     private int iterations = 1000;
 
+    /**
+     * Constructor for EcaParams.
+     * 
+     * @param args The command line arguments
+     */
+
     public EcaParams(String[] args) {
         parseArgs(args);
     }
+
+    /**
+     * Parses the command line arguments and sets the parameters.
+     * 
+     * @param args The command line arguments.
+     */
 
     private void parseArgs(String[] args) {
         for (int i = 0; i < args.length; i++) {
             String flag = args[i];
             switch (flag) {
                 case "-rules":
-                    // if (i+1 < args.length && isInteger(args[i+1])) {
-                    //     rule = 
-                    // }
+                    // check if the next argument is a single integer (deterministic rule)
                     if (i + 1 < args.length && isInteger(args[i + 1])) {
                         rule = Integer.parseInt(args[i + 1]);
                         probabilities = null;
                         i++;
+                    // check if there are 8 more arguments (probabilistic rule)
                     } else if (i + 8 < args.length) {
                         probabilities = new double[8];
                         for (int j = 0; j < 8; j++) {
@@ -105,6 +118,12 @@ public class EcaParams {
         }
     }
 
+    /**
+     * Checks if a string can be parsed as an integer, and returns true if it can, false otherwise.
+     * 
+     * @param s The string to check.
+     * @return True if the string can be parsed as an integer, False otherwise.
+     */
     private boolean isInteger(String s) {
         try {
             Integer.parseInt(s);
@@ -124,6 +143,10 @@ public class EcaParams {
     public double getInit() { return init; }
     public int getIterations() { return iterations; }
 
+    /**
+     * Returns a string representation of the EcaParams object.
+     * 
+     */
     @Override
     public String toString() {
         return "EcaParams{" +
