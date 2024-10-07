@@ -1,10 +1,13 @@
+package homework.one;
 import java.util.Arrays;
+
+
 
 public class EcaParams {
     private int rule;
     private double[] probabilities;
-    private String offColor = "black";
-    private String onColor = "white";
+    private AnsiColor offColor = new AnsiColor("black");
+    private AnsiColor onColor = new AnsiColor("white");
     private long seed = 0;
     private int size = 100;
     private double init = 0.0;
@@ -19,6 +22,9 @@ public class EcaParams {
             String flag = args[i];
             switch (flag) {
                 case "-rules":
+                    // if (i+1 < args.length && isInteger(args[i+1])) {
+                    //     rule = 
+                    // }
                     if (i + 1 < args.length && isInteger(args[i + 1])) {
                         rule = Integer.parseInt(args[i + 1]);
                         probabilities = null;
@@ -33,17 +39,17 @@ public class EcaParams {
                         throw new IllegalArgumentException("Invalid number of arguments for -rules");
                     }
                     break;
-                case "-off":
+                case "-off-color":
                     if (i + 1 < args.length) {
-                        offColor = args[i + 1];
+                        offColor = new AnsiColor(args[i + 1]);
                         i++;
                     } else {
                         throw new IllegalArgumentException("Off color must be provided");
                     }
                     break;
-                case "-on":
+                case "-on-color":
                     if (i + 1 < args.length) {
-                        onColor = args[i + 1];
+                        onColor = new AnsiColor(args[i + 1]);
                         i++;
                     } else {
                         throw new IllegalArgumentException("On color must be provided");
@@ -111,8 +117,8 @@ public class EcaParams {
     // Getter methods
     public int getRule() { return rule; }
     public double[] getProbabilities() { return probabilities; }
-    public String getOffColor() { return offColor; }
-    public String getOnColor() { return onColor; }
+    public AnsiColor getOffColor() { return offColor; }
+    public AnsiColor getOnColor() { return onColor; }
     public long getSeed() { return seed; }
     public int getSize() { return size; }
     public double getInit() { return init; }
@@ -123,8 +129,8 @@ public class EcaParams {
         return "EcaParams{" +
                 "rule=" + rule +
                 ", probabilities=" + Arrays.toString(probabilities) +
-                ", offColor='" + offColor + '\'' +
-                ", onColor='" + onColor + '\'' +
+                ", offColor='" + offColor.toString() + '\'' +
+                ", onColor='" + onColor.toString() + '\'' +
                 ", seed=" + seed +
                 ", size=" + size +
                 ", init=" + init +
