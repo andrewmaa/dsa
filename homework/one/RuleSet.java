@@ -1,4 +1,4 @@
-package homework.one;
+package one;
 import java.util.Random;
 
 public class RuleSet {

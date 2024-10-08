@@ -1,7 +1,4 @@
-package homework.one;
-// import one.EcaParams;
-// import one.AnsiColor;
-// import one.RuleSet;
+package one;
 
 import java.util.Random;
 
@@ -53,6 +50,7 @@ class ElementaryCellularAutomata {
      * Prints the current state of the cells.
      */
     private void printState() {
+        // for each cell in the cells array
         for (boolean cell : cells) {
             if (cell) {
                 onColor.printBlock();
@@ -69,15 +67,17 @@ class ElementaryCellularAutomata {
      * 
      */
     private void updateState() {
+        // create new boolean array to store the new state of the cells
         boolean[] newCells = new boolean[cells.length];
         for (int i = 0; i < cells.length; i++) {
-            // using modulo to find indices (circular array)
+            // using modulo to find indices (creating a "circular array)
             newCells[i] = ruleSet.getNext(cells[(i - 1 + cells.length) % cells.length], cells[i], cells[(i + 1) % cells.length], random);
         }
+        // update the cells array to the new state
         cells = newCells;
     }
 
-
+    // main function
     public static void main(String[] args) {
         EcaParams params = new EcaParams(args);
         ElementaryCellularAutomata ECA = new ElementaryCellularAutomata(params);
