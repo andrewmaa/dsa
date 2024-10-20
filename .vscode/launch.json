@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "StackTraceExamples",
+            "request": "launch",
+            "mainClass": "StackTraceExamples",
+            "projectName": "dsa_227c0442"
+        },
+        {
+            "type": "java",
+            "name": "binarySearch",
+            "request": "launch",
+            "mainClass": "binarySearch",
+            "projectName": "dsa_227c0442"
+        },
+        {
+            "type": "java",
+            "name": "factorialex",
+            "request": "launch",
+            "mainClass": "factorialex",
+            "projectName": "dsa_227c0442"
+        },
+        {
+            "type": "java",
+            "name": "ElementaryCellularAutomata",
+            "request": "launch",
+            "mainClass": "one.ElementaryCellularAutomata",
+            "projectName": "dsa_227c0442"
+        },
+        {
+            "type": "java",
+            "name": "FibonacciTester",
+            "request": "launch",
+            "mainClass": "zero.FibonacciTester",
+            "projectName": "dsa_227c0442"
+        }
+    ]
+}
