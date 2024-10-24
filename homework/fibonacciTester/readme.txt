@@ -3,11 +3,11 @@ September 20, 2024
 Data Structures (CSCI-UA 102)
 
 RUNBOOK: 
-This program can be compiled by executing the command:
+This program can be compiled by executing the command in the 'fibonacciTester' directory:
 javac FibonacciTester.java
 
-This program can be run by executing the command:
-java Fibonacci Tester maxInput maxTime, where:
+This program can be run by executing the command in the homework directory:
+java fibonacciTester/FibonacciTester maxInput maxTime, where:
 - maxInput is the maximum input, the larget Fibonacci value to test
 - maxTime is the maximum time, the largest amount of time (in milliseconds) that the program is willing to wait for an algorithm to finish before canceling a higher input.
 

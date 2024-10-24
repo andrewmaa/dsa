@@ -1,4 +1,4 @@
-package homework.elementaryCellularAutomata;
+package elementaryCellularAutomata;
 
 import java.util.Random;
 

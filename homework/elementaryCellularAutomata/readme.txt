@@ -3,11 +3,11 @@ October 7, 2024
 Data Structures (CSCI-UA 102)
 
 RUNBOOK: 
-This program can be compiled by executing the following command while in the /one directory:
+This program can be compiled by executing the following command while in the homework directory:
 javac *.java
 
-This program can be run by executing the following command while up one level from the /one directory:
-java one/ElementaryCellularAutomata [parameters]
+This program can be run by executing the following command while in the homework directory:
+java elementaryCellularAutomata/ElementaryCellularAutomata [parameters]
 the parameters are as follows:
 - rule: the rule to use for the elementary cellular automata
 - off-color: the color to use for a dead cell
