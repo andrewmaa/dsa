@@ -3,12 +3,12 @@ import java.io.*;
 public class Browser {
     final private UrlInfo homepage;
     
-    // Stack for back/forward history
+    // Stacks for moving between pages
     private Stack<UrlInfo> pageBackStack = new ArrayStack<>();
     private Stack<UrlInfo> pageForwardStack = new ArrayStack<>();
     private UrlInfo currentPage;
 
-    // Stack for prev/next on page
+    // Stacks for moving between frames on a page
     private Stack<String> framePrevStack = new ArrayStack<>();
     private Stack<String> frameNextStack = new ArrayStack<>();
     private String currentFrame;

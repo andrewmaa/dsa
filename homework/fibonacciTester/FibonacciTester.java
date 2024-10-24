@@ -1,4 +1,4 @@
-package homework.zero;
+package fibonacciTester;
 
 public class FibonacciTester {
     // setting variable for golden ratio, used in closed form function

@@ -1,4 +1,4 @@
-package one;
+package homework.elementaryCellularAutomata;
 
 public class AnsiColor {
     // Store the 3 bit color (values 0 through 7)
