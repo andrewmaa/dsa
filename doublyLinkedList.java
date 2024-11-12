@@ -37,7 +37,7 @@ public class doublyLinkedList<E> {
     private Node<E> trailer; // trailer sentinel
     private int size = 0; // number of nodes in the list
 
-    public DoublyLinkedList() {
+    public doublyLinkedList() {
         header = new Node<>(null, null, null); // create header
         trailer = new Node<>(null, header, null); // trailer is preceded by header
         header.setNext(trailer); // header is followed by trailer

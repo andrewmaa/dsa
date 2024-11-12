@@ -1,45 +1,4 @@
-/**
- * // insert front
- * start = Node
- * newNode = Node(el, start)
- * start = newNode
- * 
- * // delete front
- * after = start.next
- * start = after
- * ////////// delete 10th
- * start
- * curr = start
- * for i in range(10-1) {
- *    after = curr.next
- *    curr = after
- * }
- * 
- * [4,5,6,8,9]
- * target = curr.next
- * curr.next = target.next
- * 
- * 
- *   * -> * -> * -> *
- *   * -> * ------> *
- * 
- * ///// doubly
- * 
- * * <-> * <-> * <-> * <-> *
- * start
- * end
- * 
- * // delete 3rd
- * curr = start
- * for (i in range 3) {
- *    curr = curr.next
- * }
- * // curr points to 3rd node
- * curr.prev.next = curr.next
- * curr.next.prev = curr.prev
- */
-
- public class singlyLinkedList<E> implements Cloneable {
+public class SinglyLinkedList<E> {
 
     private static class Node<E> {
 
@@ -68,7 +27,7 @@
     private Node<E> tail = null; // last node of the list (or null if empty)
     private int size = 0; // number of nodes in the list
 
-    public singlyLinkedList() {
+    public SinglyLinkedList() {
     }
 
     public int size() {
@@ -114,24 +73,4 @@
             tail = null; // special case as list is now empty
         return answer;
     }
-
-    @Override
-    public singlyLinkedList<E> clone() throws CloneNotSupportedException {
-        // always use inherited Object.clone() to create the initial copy
-        singlyLinkedList<E> other = (singlyLinkedList<E>) super.clone(); // safe cast
-        if (size > 0) { // we need independent chain of nodes
-            other.head = new Node<>(head.getElement(), null);
-            Node<E> walk = head.getNext(); // walk through remainder of original list
-            Node<E> otherTail = other.head; // remember most recently created node
-            while (walk != null) { // make a new node storing same element
-                Node<E> newest = new Node<>(walk.getElement(), null);
-                otherTail.setNext(newest); // link previous node to this one
-                otherTail = newest;
-                walk = walk.getNext();
-            }
-        }
-        return other;
-    }
-
 }
-

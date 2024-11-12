@@ -3,10 +3,10 @@ October 24, 2024
 Data Structures (CSCI-UA 102)
 
 RUNBOOK: 
-This program can be compiled by executing the following command while in the two/src directory:
+This program can be compiled by executing the following command while in the src directory:
 javac *.java
 
-This program can be run by executing the following command while in the two/src directory:
+This program can be run by executing the following command while in the src directory:
 java Browser [number of frames]
 
 Example: java Browser 10
