@@ -1,5 +1,3 @@
-package simpleProgrammingLanguage;
-
 public class ArrayStack<E> implements Stack<E> {
     public static final int CAPACITY = 1000; // default array capacity
     private E[] data; // generic array used for storage

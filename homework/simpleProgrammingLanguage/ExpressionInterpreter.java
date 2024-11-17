@@ -1,4 +1,3 @@
-package simpleProgrammingLanguage;
 public class ExpressionInterpreter {
 
     private Stack<Node> expressionStack = new ArrayStack<>();

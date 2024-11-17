@@ -1,5 +1,3 @@
-package simpleProgrammingLanguage;
-
 public class Tokenizer {
     public static class TokenList {
         final public String variableName;

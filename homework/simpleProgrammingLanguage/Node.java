@@ -1,5 +1,3 @@
-package simpleProgrammingLanguage;
-
 public class Node {
   public String element;
   

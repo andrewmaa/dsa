@@ -19,6 +19,10 @@ This assignment simulates a text-based browser with a specified number of frames
 **Date:** November 11, 2024  
 This assignment involves the use of binary trees to interpret and calculate the result of mathematical expressions. The program parses an input expression, constructs a binary tree where each node represents an operator or operand, and then evaluates the tree to produce the final result. This approach ensures that the order of operations is correctly followed.
 
+### 5. [Simple Programming Language (Assignment 3b)](homework/simpleProgrammingLanguage/)
+**Date:** November 18, 2024  
+This assignment creates a REPL (Read-Eval-Print Loop) for a simple programming language. The language supports variables, arithmetic operations, and conditional statements. The program uses a stack to evaluate expressions and a hash map to store variable values.
+
 ## Compilation and Execution
 Each assignment includes a detailed runbook with instructions on how to compile and run the programs. Ensure you are in the correct directory before executing the commands.
 

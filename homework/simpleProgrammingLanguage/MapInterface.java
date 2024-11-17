@@ -1,4 +1,4 @@
-package simpleProgrammingLanguage;
+
 // This represents a Key-Value Map from key-type K to value-type V
 
 public interface MapInterface<K, V>
