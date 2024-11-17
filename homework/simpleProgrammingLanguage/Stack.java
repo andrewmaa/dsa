@@ -1,3 +1,5 @@
+package simpleProgrammingLanguage;
+
 /**
  * A collection of objects that are inserted and removed according to the last-in
  * first-out principle. Although similar in purpose, this interface differs from

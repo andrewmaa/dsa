@@ -15,7 +15,9 @@ This assignment simulates an elementary cellular automaton based on a specified 
 **Date:** October 24, 2024  
 This assignment simulates a text-based browser with a specified number of frames. Using stacks, the program keeps track of the pages visited, allowing navigation through the pages in each frame using `back` and `forward` commands. The size of the browser can also be specified.
 
-
+### 4. [Order of Operations (Assignment 3a)](homework/orderOfOperations/)
+**Date:** November 11, 2024  
+This assignment involves the use of binary trees to interpret and calculate the result of mathematical expressions. The program parses an input expression, constructs a binary tree where each node represents an operator or operand, and then evaluates the tree to produce the final result. This approach ensures that the order of operations is correctly followed.
 
 ## Compilation and Execution
 Each assignment includes a detailed runbook with instructions on how to compile and run the programs. Ensure you are in the correct directory before executing the commands.
