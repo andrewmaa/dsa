@@ -15,9 +15,14 @@ This program can be run by executing the following command while in the `simpleP
 
 > Examples:   
 >`> x = 10`  
+>`x = 10.0`  
 >`> y = x + 5`  
+>`y = 15.0`  
 >`> y`  
->`15.0`
+>`15.0`  
+>`> y = x / z`  
+>`Unbound variable: z`  
+>`Not solved.`
 
 ## Time Spent
 This project took around 10 hours to complete.
