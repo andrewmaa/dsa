@@ -2,6 +2,7 @@ import java.io.IOException;
 
 public class HuffmanTree {
   private HuffmanNode root;
+  private HuffmanNode current;  // For decoding
 
   private static class HuffmanNode implements Comparable<HuffmanNode> {
     final public String symbols;
@@ -116,6 +117,112 @@ public class HuffmanTree {
     return new HuffmanTree(b.extractMin());
   }
 
+  public static HuffmanTree loadTree(String storedTree) {
+    Stack<HuffmanNode> stack = new ArrayStack<>();
+    
+    for (int i = 0; i < storedTree.length(); i++) {
+        char currentChar = storedTree.charAt(i);
+        
+        // Handle escape sequences
+        if (currentChar == '\\') {
+            char nextChar = storedTree.charAt(i + 1);
+            
+            if (nextChar == 'e') {
+                // Keep \e as is
+                stack.push(new HuffmanNode("eom", 0));
+                i++;
+            } else if (nextChar == '\\') {
+                // Convert \\ to \
+                stack.push(new HuffmanNode("\\", 0));
+                i++;
+            } else if (nextChar == '|') {
+                // Convert \| to |
+                stack.push(new HuffmanNode("|", 0));
+                i++;
+            }
+        }
+        // Handle unescaped pipe - combine nodes
+        else if (currentChar == '|') {
+            HuffmanNode first = stack.pop();
+            HuffmanNode second = stack.pop();
+            HuffmanNode parent = new HuffmanNode(second, first);
+            stack.push(parent);
+        }
+        // Handle regular characters
+        else {
+            stack.push(new HuffmanNode(String.valueOf(currentChar), 0));
+        }
+    }
+
+    // If there are multiple nodes remaining, combine them
+    while (stack.size() > 1) {
+        HuffmanNode first = stack.pop();
+        HuffmanNode second = stack.pop();
+        HuffmanNode parent = new HuffmanNode(second, first);
+        stack.push(parent);
+    }
+    return new HuffmanTree(stack.pop());
+  }
+
+  public String[] legendToArray() {
+    String[] codes = new String[129];  // 128 ASCII chars + 1 EOM
+    // Initialize all entries to null
+    for (int i = 0; i < codes.length; i++) {
+      codes[i] = null;
+    }
+    legendToArrayHelper(this.root, "", codes);
+    return codes;
+  }
+
+  private void legendToArrayHelper(HuffmanNode node, String bits, String[] codes) {
+    if (node == null) return;
+    
+    // Traverse left (add 0)
+    legendToArrayHelper(node.left, bits + "0", codes);
+    
+    // If leaf node, store the code
+    if (node.symbols.length() == 1) {
+      if (node.symbols.equals("eom")) {
+        codes[128] = bits;  // Store EOM code at index 128
+      } else if (node.symbols.equals("space")) {
+        codes[32] = bits;   // Store space at ASCII 32
+      } else {
+        char c = node.symbols.charAt(0);
+        codes[(int)c] = bits;  // Store character code at its ASCII value
+      }
+    }
+    
+    // Traverse right (add 1)
+    legendToArrayHelper(node.right, bits + "1", codes);
+  }
+
+  public void initializeCurrent() {
+    current = root;
+  }
+
+  public String advanceCurrent(char bit) {
+    if (current == null) {
+      initializeCurrent();
+      return null;
+    }
+
+    // Advance left or right based on bit
+    if (bit == '0') {
+      current = current.left;
+    } else if (bit == '1') {
+      current = current.right;
+    }
+
+    // If we've reached a leaf node
+    if (current != null && current.left == null && current.right == null) {
+      String symbol = current.symbols;
+      initializeCurrent();
+      return symbol;
+    }
+
+    return null;
+  }
+
   // Usage from the command line:
   // cat sample_legend.txt | java HuffmanTree 
   // on windows: type sample_legend.txt | java HuffmanTree
@@ -145,4 +252,5 @@ public class HuffmanTree {
     if (symbol.equals("\\")) return "\\\\";
     return symbol;
   }
+
 }
