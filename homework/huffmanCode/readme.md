@@ -1,4 +1,4 @@
-# Huffman Coding (Assignment 4)
+# Huffman Coding (Assignment 4a)
 **November 26, 2024**  
 *Data Structures (CSCI-UA 102)*
 

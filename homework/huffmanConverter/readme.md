@@ -1,4 +1,4 @@
-# Huffman Converter (Assignment 5)
+# Huffman Converter (Assignment 4b)
 **December 9, 2024**  
 *Data Structures (CSCI-UA 102)*
 

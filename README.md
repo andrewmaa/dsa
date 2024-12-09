@@ -15,13 +15,21 @@ This assignment simulates an elementary cellular automaton based on a specified 
 **Date:** October 24, 2024  
 This assignment simulates a text-based browser with a specified number of frames. Using stacks, the program keeps track of the pages visited, allowing navigation through the pages in each frame using `back` and `forward` commands. The size of the browser can also be specified.
 
-### 4. [Order of Operations (Assignment 3a)](homework/orderOfOperations/)
+### 3a. [Order of Operations (Assignment 3a)](homework/orderOfOperations/)
 **Date:** November 11, 2024  
 This assignment involves the use of binary trees to interpret and calculate the result of mathematical expressions. The program parses an input expression, constructs a binary tree where each node represents an operator or operand, and then evaluates the tree to produce the final result. This approach ensures that the order of operations is correctly followed.
 
-### 5. [Simple Programming Language (Assignment 3b)](homework/simpleProgrammingLanguage/)
+### 3b. [Simple Programming Language (Assignment 3b)](homework/simpleProgrammingLanguage/)
 **Date:** November 18, 2024  
 This assignment creates a REPL (Read-Eval-Print Loop) for a simple programming language. The language supports variables, arithmetic operations, and conditional statements. The program uses a stack to evaluate expressions and a hash map to store variable values.
+
+### 4a. [Huffman Code (Assignment 4a)](homework/huffmanCode/)
+**Date:** November 26, 2024  
+This assignment builds a Huffman tree from a given legend and provides options to print the tree in different formats. It includes methods for encoding and decoding messages using the Huffman tree.
+
+### 4b. [Huffman Converter (Assignment 4b)](homework/huffmanConverter/)
+**Date:** December 9, 2024  
+This assignment implements a Huffman coding system that can compress text by building a Huffman tree and generating binary codes for characters based on their frequency. The program can be run in different modes to analyze input, encode messages, or decode compressed data.
 
 ## Compilation and Execution
 Each assignment includes a detailed runbook with instructions on how to compile and run the programs. Ensure you are in the correct directory before executing the commands.
