@@ -6,11 +6,11 @@
 This program interprets mathematical expressions and builds an expression tree to evaluate them. It uses stacks to manage operators and operands, allowing it to handle complex expressions with proper precedence and associativity rules.
 
 ## Runbook
-This program can be compiled by executing the following command while in the `orderOfOperations/src` directory:
+This program can be compiled by executing the following command while in the `orderOfOperations` directory:
 
 `javac *.java`
 
-This program can be run by executing the following command while in the `orderOfOperations/src` directory:
+This program can be run by executing the following command while in the `orderOfOperations` directory:
 `java ExpressionInterpreter [expression]`
 
 , where `[expression]` is the mathematical expression to be evaluated.

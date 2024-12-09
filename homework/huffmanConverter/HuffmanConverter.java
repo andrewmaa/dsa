@@ -21,7 +21,7 @@ public class HuffmanConverter {
         char bit = input.charAt(i);
         String symbol = tree.advanceCurrent(bit);
         if (symbol != null) {
-          if (symbol.equals("eom")) {
+          if (symbol.equals("\\e")) {
             break;  // End of message found
           } else if (symbol.equals("space")) {
             System.out.print(" ");
