@@ -22,6 +22,18 @@ Special characters:
 - "\e" represents the end-of-message marker
 - Escape sequences are used for special characters like backslash and pipe
 
+ANALYSIS: 
+Using the HuffmanConverter for the archives would reduce bit length by usually more than 50%.
+For example, the Jay Treaty is 49,307 characters long (or 394,456 bits), but the encoded version is only 217,919 bits, reducing bit length by roughly 44.8%.
+
+Some other examples:
+- Abolition Amendment: 490 characters (3,920 bits) -> 2432 bits (38% reduction)
+- Alaska Purchase: 10050 characters (80,400 bits) -> 45,441 bits (43.5% reduction)
+- Articles of Confederation: 20,965 characters (167,720 bits) -> 84,285 bits (49.7% reduction)
+
+It is interesting that for smaller files, the reduction is not as significant, and potentially, and using the converter for these files may lead to a larger bit length instead.
+Using the java_spec.txt file, I was also able to encode the HuffmanConverter file itself as well, however the analyze mode did not work, since our array does not account for some special characters.
+
 TIME SPENT:
 This project took approximately 5 hours to complete.
 
